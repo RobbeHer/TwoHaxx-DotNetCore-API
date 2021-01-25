@@ -1,5 +1,4 @@
-﻿using AngularProjectAPI.Data;
-using AngularProjectAPI.Helpers;
+﻿using AngularProjectAPI.Helpers;
 using AngularProjectAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;

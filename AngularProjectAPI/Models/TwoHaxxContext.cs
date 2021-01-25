@@ -15,10 +15,14 @@ namespace AngularProjectAPI.Models
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Talk> Talks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>().ToTable("User");
+            modelBuilder.Entity<User>().ToTable("Users");
+            modelBuilder.Entity<Room>().ToTable("Rooms");
+            modelBuilder.Entity<Talk>().ToTable("Talks");
 
         }
     }

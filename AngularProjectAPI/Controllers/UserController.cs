@@ -4,7 +4,6 @@ using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using AngularProjectAPI.Data;
 using AngularProjectAPI.Models;
 using AngularProjectAPI.Services;
 using Dapper;
@@ -30,11 +29,10 @@ namespace AngularProjectAPI.Controllers
             _context = context;
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
-            var username = User.Claims.FirstOrDefault(c => c.Type == "Email").Value;
             return await _context.Users.ToListAsync();
         }
 
@@ -82,6 +80,11 @@ namespace AngularProjectAPI.Controllers
             return NoContent();
         }
 
+        private bool UserExists(int id)
+        {
+            return _context.Users.Any(e => e.UserID == id);
+        }
+
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
@@ -90,30 +93,6 @@ namespace AngularProjectAPI.Controllers
 
             return Ok(user);
         }
-
-        [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody]User userParam)
-        {
-            var user = _userService.Authenticate(userParam.Email, userParam.Password);
-
-            if (user == null)
-                return BadRequest(new { message = "Email or password is incorrect" });
-
-            return Ok(user);
-        }
-
-        /*[HttpGet("users-of-type/{type}")]
-        public async Task<ActionResult<IEnumerable<User>>> UsersOfType(String type)
-        {
-            var users = await _context.Users.Include("Role").Where(x => x.Role.Name == type).ToListAsync();
-
-            if (users == null)
-            {
-                return NotFound();
-            }
-
-            return users;
-        }*/
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<User>> DeleteUser(int id)
@@ -130,9 +109,16 @@ namespace AngularProjectAPI.Controllers
             return user;
         }
 
-        private bool UserExists(int id)
+
+        [HttpPost("authenticate")]
+        public IActionResult Authenticate([FromBody] User userParam)
         {
-            return _context.Users.Any(e => e.UserID == id);
+            var user = _userService.Authenticate(userParam.Email, userParam.Password);
+
+            if (user == null)
+                return BadRequest(new { message = "Email or password is incorrect" });
+
+            return Ok(user);
         }
     }
 }
