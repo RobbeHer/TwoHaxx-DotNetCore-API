@@ -12,7 +12,7 @@ namespace AngularProjectAPI.Models
         {
             context.Database.EnsureCreated();
 
-            if (context.Users.Any())
+            if (!context.Users.Any())
             {
                 context.Users.AddRange(
                     new User { FirstName = "", LastName = "", Email = "guest@test.be", Password = "1234", ActiveDirectoryGUID = "", IsAdmin = false },
@@ -24,7 +24,7 @@ namespace AngularProjectAPI.Models
                 context.SaveChanges();
             }
 
-            if (context.Rooms.Any()) 
+            if (!context.Rooms.Any()) 
             {
                 context.Rooms.AddRange(
                     new Room { Name = "Room 1", Description = "Description room 1", StartDate = new DateTime(), EndDate = new DateTime() }
@@ -32,7 +32,7 @@ namespace AngularProjectAPI.Models
                 context.SaveChanges();
             }
 
-            if (context.Talks.Any())
+            if (!context.Talks.Any())
             {
                 context.Talks.AddRange(
                     new Talk { Name = "Talk 1", Description = "Description talk 1", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, RoomID = 1 }
