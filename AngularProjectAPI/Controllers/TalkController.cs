@@ -24,7 +24,7 @@ namespace AngularProjectAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Talk>>> GetTalks()
         {
-            return await _context.Talks.ToListAsync();
+            return await _context.Talks.Include(t=>t.Talker).Include(m=>m.Moderator).ToListAsync();
         }
 
         // GET: api/Talk/5

@@ -19,8 +19,8 @@ namespace AngularProjectAPI.Models
         public User Talker { get; set; }
 
         // user 2
-        /*public int ModeratorID { get; set; }
-        public User Moderator { get; set; }*/
+        public int? ModeratorID { get; set; }
+        public User Moderator { get; set; }
 
 
         public int RoomID { get; set; }
