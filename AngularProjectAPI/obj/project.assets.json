@@ -9771,19 +9771,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\michi\\.nuget\\packages\\": {}
+    "C:\\Users\\robbe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\TM\\P4\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
+      "projectUniqueName": "C:\\Users\\robbe\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
       "projectName": "AngularProjectAPI",
-      "projectPath": "C:\\TM\\P4\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
-      "packagesPath": "C:\\Users\\michi\\.nuget\\packages\\",
-      "outputPath": "C:\\TM\\P4\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\obj\\",
+      "projectPath": "C:\\Users\\robbe\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
+      "packagesPath": "C:\\Users\\robbe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\robbe\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\michi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\robbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9882,7 +9882,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

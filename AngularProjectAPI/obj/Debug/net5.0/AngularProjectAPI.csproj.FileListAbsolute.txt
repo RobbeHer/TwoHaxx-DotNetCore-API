@@ -319,3 +319,6 @@ C:\TM\P4\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5.0\AngularProjec
 C:\TM\P4\TwoHaxx-DotNetCore-API\AngularProjectAPI\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\TM\P4\TwoHaxx-DotNetCore-API\AngularProjectAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\TM\P4\TwoHaxx-DotNetCore-API\AngularProjectAPI\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\robbe\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\robbe\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\robbe\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

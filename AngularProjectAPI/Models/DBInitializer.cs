@@ -32,7 +32,7 @@ namespace AngularProjectAPI.Models
             context.SaveChanges();
 
             context.Talks.AddRange(
-                    new Talk { Name = "Talk 1", Description = "Description talk 1", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, RoomID = 1 }
+                    new Talk { Name = "Talk 1", Description = "Description talk 1", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 1 }
                 );
             context.SaveChanges();
         }
