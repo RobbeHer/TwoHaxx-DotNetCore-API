@@ -17,6 +17,9 @@ namespace AngularProjectAPI.Models
         public bool IsAdmin { get; set; }
         public bool IsGuest { get; set; }
 
+        public virtual ICollection<Talk> TalksAsModerator { get; set; }
+        public virtual ICollection<Talk> TalksAsTalker{ get; set; }
+
         [NotMapped]
         public string Token { get; set; }
     }

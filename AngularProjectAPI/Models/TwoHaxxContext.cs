@@ -24,6 +24,14 @@ namespace AngularProjectAPI.Models
             modelBuilder.Entity<Room>().ToTable("Rooms");
             modelBuilder.Entity<Talk>().ToTable("Talks");
 
+            modelBuilder.Entity<Talk>()
+      .HasOne(v => v.Talker)
+      .WithMany(a => a.TalksAsTalker).HasForeignKey(x => x.TalkerID);
+
+            modelBuilder.Entity<Talk>()
+     .HasOne(v => v.Moderator)
+     .WithMany(a => a.TalksAsModerator).HasForeignKey(x => x.ModeratorID);
+
         }
     }
 }

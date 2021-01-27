@@ -40,7 +40,7 @@ namespace AngularProjectAPI
                        .AllowAnyHeader();
             }));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(swagger =>
