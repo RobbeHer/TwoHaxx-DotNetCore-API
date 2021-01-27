@@ -29,6 +29,17 @@ namespace AngularProjectAPI.Controllers
             return await _context.Rooms.ToListAsync();
         }
 
+        [HttpGet("plannings")]
+        public async Task<ActionResult<IEnumerable<Room>>> GetPlannings()
+        {
+            var plannings = await _context.Rooms.ToListAsync();
+            foreach (var room in plannings)
+            {
+                room.Talks = _context.Talks.Where(x => x.RoomID == room.RoomID).ToArray();
+            }
+            return plannings;
+        }
+
         // GET: api/Room/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Room>> GetRoom(int id)
