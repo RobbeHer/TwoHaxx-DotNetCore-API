@@ -120,5 +120,18 @@ namespace AngularProjectAPI.Controllers
 
             return message;
         }
+
+        [HttpPost("user/{id}/likes/{id}")]
+        public async Task<ActionResult<Message>> PostUserLikeMessage(int userID, int messageID)
+        {
+            UserLikeMessage userLikeMessage = new UserLikeMessage();
+            userLikeMessage.UserID = userID;
+            userLikeMessage.MessageID = messageID;
+
+            _context.UserLikeMessage.Add(userLikeMessage);
+            await _context.SaveChangesAsync();
+
+            return Ok(userLikeMessage);
+        }
     }
 }

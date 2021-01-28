@@ -18,22 +18,24 @@ namespace AngularProjectAPI.Models
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Talk> Talks { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<UserLikeMessage> UserLikeMessage { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().ToTable("Users");
             modelBuilder.Entity<Room>().ToTable("Rooms");
             modelBuilder.Entity<Talk>().ToTable("Talks");
+
+            modelBuilder.Entity<Talk>()
+              .HasOne(v => v.Talker)
+              .WithMany(a => a.TalksAsTalker).HasForeignKey(x => x.TalkerID);
+
+            modelBuilder.Entity<Talk>()
+              .HasOne(v => v.Moderator)
+              .WithMany(a => a.TalksAsModerator).HasForeignKey(x => x.ModeratorID);
+
             modelBuilder.Entity<Message>().ToTable("Messages");
-
-            modelBuilder.Entity<Talk>()
-      .HasOne(v => v.Talker)
-      .WithMany(a => a.TalksAsTalker).HasForeignKey(x => x.TalkerID);
-
-            modelBuilder.Entity<Talk>()
-     .HasOne(v => v.Moderator)
-     .WithMany(a => a.TalksAsModerator).HasForeignKey(x => x.ModeratorID);
-
+            modelBuilder.Entity<UserLikeMessage>().ToTable("UserLikeMessages");
         }
     }
 }
