@@ -54,6 +54,21 @@ namespace AngularProjectAPI.Controllers
             return room;
         }
 
+        [HttpGet("planning/{id}")]
+        public async Task<ActionResult<Room>> GetPlanning(int id)
+        {
+            var planning = await _context.Rooms.FindAsync(id);
+
+            if (planning == null)
+            {
+                return NotFound();
+            }
+
+            planning.Talks = _context.Talks.Where(x => x.RoomID == planning.RoomID).ToArray();
+
+            return planning;
+        }
+
         // PUT: api/Room/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutRoom(int id, Room room)
