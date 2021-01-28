@@ -35,6 +35,15 @@ namespace AngularProjectAPI.Models
                     new Talk { Name = "Talk 1", Description = "Description talk 1", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 1 }
                 );
             context.SaveChanges();
+
+            context.Messages.AddRange(
+                    new Message { Content = "Message 1", TimeStamp = new DateTime(), UserID = 1, RoomID = 1 },
+                    new Message { Content = "Message 2", TimeStamp = new DateTime(), UserID = 2, RoomID = 1 },
+                    new Message { Content = "Message 3", TimeStamp = new DateTime(), UserID = 3, RoomID = 1 },
+                    new Message { Content = "Message 4", TimeStamp = new DateTime(), UserID = 4, RoomID = 1 },
+                    new Message { Content = "Message 5", TimeStamp = new DateTime(), UserID = 5, RoomID = 1 }
+                );
+            context.SaveChanges();
         }
     }
 }
