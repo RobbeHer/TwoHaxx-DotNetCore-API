@@ -11,7 +11,7 @@ namespace AngularProjectAPI.Models
         public string Content { get; set; }
         public DateTime TimeStamp { get; set; }
 
-        // RelationsM
+        // RelationsMasp.net
         public int UserID { get; set; }
         public User User { get; set; }
         public int RoomID { get; set; }
