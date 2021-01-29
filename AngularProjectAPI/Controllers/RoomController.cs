@@ -26,16 +26,16 @@ namespace AngularProjectAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Room>>> GetRooms()
         {
-            return await _context.Room.ToListAsync();
+            return await _context.Rooms.ToListAsync();
         }
 
         [HttpGet("plannings")]
         public async Task<ActionResult<IEnumerable<Room>>> GetPlannings()
         {
-            var plannings = await _context.Room.ToListAsync();
+            var plannings = await _context.Rooms.ToListAsync();
             foreach (var room in plannings)
             {
-                room.Talks = _context.Talk.Where(x => x.RoomID == room.RoomID).ToArray();
+                room.Talks = _context.Talks.Where(x => x.RoomID == room.RoomID).ToArray();
             }
             return plannings;
         }
@@ -44,7 +44,7 @@ namespace AngularProjectAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Room>> GetRoom(int id)
         {
-            var room = await _context.Room.FindAsync(id);
+            var room = await _context.Rooms.FindAsync(id);
 
             if (room == null)
             {
@@ -57,14 +57,14 @@ namespace AngularProjectAPI.Controllers
         [HttpGet("planning/{id}")]
         public async Task<ActionResult<Room>> GetPlanning(int id)
         {
-            var planning = await _context.Room.FindAsync(id);
+            var planning = await _context.Rooms.FindAsync(id);
 
             if (planning == null)
             {
                 return NotFound();
             }
 
-            planning.Talks = _context.Talk.Where(x => x.RoomID == planning.RoomID).ToArray();
+            planning.Talks = _context.Talks.Where(x => x.RoomID == planning.RoomID).ToArray();
 
             return planning;
         }
@@ -101,13 +101,13 @@ namespace AngularProjectAPI.Controllers
 
         private bool RoomExists(int id)
         {
-            return _context.Room.Any(e => e.RoomID == id);
+            return _context.Rooms.Any(e => e.RoomID == id);
         }
 
         [HttpPost]
         public async Task<ActionResult<Room>> PostRoom(Room room)
         {
-            _context.Room.Add(room);
+            _context.Rooms.Add(room);
             await _context.SaveChangesAsync();
 
             return Ok(room);
@@ -116,13 +116,13 @@ namespace AngularProjectAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Room>> DeleteRoom(int id)
         {
-            var room = await _context.Room.FindAsync(id);
+            var room = await _context.Rooms.FindAsync(id);
             if (room == null)
             {
                 return NotFound();
             }
 
-            _context.Room.Remove(room);
+            _context.Rooms.Remove(room);
             await _context.SaveChangesAsync();
 
             return room;

@@ -24,14 +24,14 @@ namespace AngularProjectAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Talk>>> GetTalks()
         {
-            return await _context.Talk.Include(t=>t.Talker).Include(m=>m.Moderator).ToListAsync();
+            return await _context.Talks.Include(t=>t.Talker).Include(m=>m.Moderator).ToListAsync();
         }
 
         // GET: api/Talk/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Talk>> GetTalk(int id)
         {
-            var talk = await _context.Talk.FindAsync(id);
+            var talk = await _context.Talks.FindAsync(id);
 
             if (talk == null)
             {
@@ -73,13 +73,13 @@ namespace AngularProjectAPI.Controllers
 
         private bool TalkExists(int id)
         {
-            return _context.Talk.Any(e => e.TalkID == id);
+            return _context.Talks.Any(e => e.TalkID == id);
         }
 
         [HttpPost]
         public async Task<ActionResult<Talk>> PostTalk(Talk talk)
         {
-            _context.Talk.Add(talk);
+            _context.Talks.Add(talk);
             await _context.SaveChangesAsync();
 
             return Ok(talk);
@@ -88,13 +88,13 @@ namespace AngularProjectAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Talk>> DeleteTalk(int id)
         {
-            var talk = await _context.Talk.FindAsync(id);
+            var talk = await _context.Talks.FindAsync(id);
             if (talk == null)
             {
                 return NotFound();
             }
 
-            _context.Talk.Remove(talk);
+            _context.Talks.Remove(talk);
             await _context.SaveChangesAsync();
 
             return talk;
