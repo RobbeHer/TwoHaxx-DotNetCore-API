@@ -12,7 +12,7 @@ namespace AngularProjectAPI.Models
         public string Content { get; set; }
 
         // Relation
-        public int UserID { get; set; }
+        public int? UserID { get; set; }
         public User User { get; set; }
         public int TalkID { get; set; }
         public Talk Talk { get; set; }
