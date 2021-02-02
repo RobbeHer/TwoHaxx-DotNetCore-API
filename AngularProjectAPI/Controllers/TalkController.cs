@@ -27,6 +27,13 @@ namespace AngularProjectAPI.Controllers
             return await _context.Talks.Include(t=>t.Talker).Include(m=>m.Moderator).ToListAsync();
         }
 
+        // GET: api/Talk/talks-of-room/5
+        [HttpGet("talks-of-room/{id}")]
+        public async Task<ActionResult<IEnumerable<Talk>>> GetTalksOfRoom(int id)
+        {
+            return await _context.Talks.Where(x => x.RoomID == id).ToListAsync();
+        }
+
         // GET: api/Talk/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Talk>> GetTalk(int id, string code)
