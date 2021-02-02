@@ -31,7 +31,7 @@ namespace AngularProjectAPI.Controllers
         [HttpGet("talks-of-room/{id}")]
         public async Task<ActionResult<IEnumerable<Talk>>> GetTalksOfRoom(int id)
         {
-            return await _context.Talks.Where(x => x.RoomID == id).ToListAsync();
+            return await _context.Talks.Where(x => x.RoomID == id).Include(t => t.Talker).Include(m => m.Moderator).ToListAsync();
         }
 
         // GET: api/Talk/5
