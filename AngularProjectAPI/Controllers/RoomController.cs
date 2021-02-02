@@ -40,7 +40,6 @@ namespace AngularProjectAPI.Controllers
             return plannings;
         }
 
-        // GET: api/Room/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Room>> GetRoom(int id)
         {
@@ -54,6 +53,7 @@ namespace AngularProjectAPI.Controllers
             return room;
         }
 
+        // GET: api/Room/planning/5
         [HttpGet("planning/{id}")]
         public async Task<ActionResult<Room>> GetPlanning(int id)
         {

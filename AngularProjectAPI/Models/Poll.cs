@@ -9,11 +9,12 @@ namespace AngularProjectAPI.Models
     {
         public int PollID { get; set; }
         public string Name { get; set; }
-        public List<PollOption> PollOptions { get; set; }
+        public string Question { get; set; }
+        public ICollection<PollOption> PollOptions { get; set; }
 
         // Relations
-        public int PollTypeID { get; set; }
-        public PollType PollType { get; set; }
+        /*public int PollTypeID { get; set; }
+        public PollType PollType { get; set; }*/
         public int RoomID { get; set; }
         public Room Room { get; set; }
     }

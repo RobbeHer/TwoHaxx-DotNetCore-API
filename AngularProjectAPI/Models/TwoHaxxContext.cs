@@ -20,6 +20,8 @@ namespace AngularProjectAPI.Models
         public DbSet<Message> Messages { get; set; }
         public DbSet<UserLikeMessage> UserLikeMessage { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
+        public DbSet<Poll> Polls { get; set; }
+        public DbSet<PollOption> PollOptions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -38,6 +40,8 @@ namespace AngularProjectAPI.Models
             modelBuilder.Entity<Message>().ToTable("Messages");
             modelBuilder.Entity<UserLikeMessage>().ToTable("UserLikeMessages");
             modelBuilder.Entity<Feedback>().ToTable("Feedbacks");
+            modelBuilder.Entity<Poll>().ToTable("Polls");
+            modelBuilder.Entity<PollOption>().ToTable("PollOptions");
         }
     }
 }

@@ -50,6 +50,20 @@ namespace AngularProjectAPI.Models
                     new Feedback { Score = 5, Content = "Good talk.", UserID = 2, TalkID = 1 }
                 );
             context.SaveChanges();
+
+            context.Polls.AddRange(
+                    new Poll { Name = "Poll 1", Question = "My question", RoomID = 1 },
+                    new Poll { Name = "Poll 2", Question = "My second question", RoomID = 1 }
+                );
+            context.SaveChanges();
+
+            context.PollOptions.AddRange(
+                    new PollOption { Content = "Answer 1", PollID = 1 },
+                    new PollOption { Content = "Answer 2", PollID = 1 },
+                    new PollOption { Content = "Answer 1 of poll 2", PollID = 2 },
+                    new PollOption { Content = "Answer 2 of poll 2", PollID = 2 }
+                );
+            context.SaveChanges();
         }
     }
 }
