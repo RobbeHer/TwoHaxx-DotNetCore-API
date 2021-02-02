@@ -322,3 +322,13 @@ C:\TM\P4\TwoHaxx-DotNetCore-API\AngularProjectAPI\bin\Debug\net5.0\Newtonsoft.Js
 C:\Users\robbe\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\robbe\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\robbe\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5.0\AngularProjectAPI.csprojAssemblyReference.cache
+C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5.0\AngularProjectAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5.0\AngularProjectAPI.AssemblyInfoInputs.cache
+C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5.0\AngularProjectAPI.AssemblyInfo.cs
+C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5.0\AngularProjectAPI.csproj.CoreCompileInputs.cache
+C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5.0\AngularProjectAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5.0\AngularProjectAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5.0\AngularProjectAPI.dll
+C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5.0\ref\AngularProjectAPI.dll
+C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5.0\AngularProjectAPI.pdb

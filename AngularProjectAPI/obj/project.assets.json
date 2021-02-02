@@ -9771,19 +9771,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\robbe\\.nuget\\packages\\": {}
+    "C:\\Users\\radar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\robbe\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
+      "projectUniqueName": "C:\\Users\\radar\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
       "projectName": "AngularProjectAPI",
-      "projectPath": "C:\\Users\\robbe\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
-      "packagesPath": "C:\\Users\\robbe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\robbe\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\obj\\",
+      "projectPath": "C:\\Users\\radar\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
+      "packagesPath": "C:\\Users\\radar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\radar\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\robbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\radar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

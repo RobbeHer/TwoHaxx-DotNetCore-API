@@ -1,0 +1,102 @@
+﻿using AngularProjectAPI.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace AngularProjectAPI.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class FeedbackController : ControllerBase
+    {
+        private readonly TwoHaxxContext _context;
+
+        public FeedbackController(TwoHaxxContext context)
+        {
+            _context = context;
+        }
+
+        //[Authorize]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Feedback>>> GetTalks()
+        {
+            return await _context.Talks.ToListAsync();
+        }
+
+        // GET: api/Talk/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Talk>> GetTalk(int id)
+        {
+            var talk = await _context.Talks.FindAsync(id);
+
+            if (talk == null)
+            {
+                return NotFound();
+            }
+
+            return talk;
+        }
+
+        // PUT: api/Talk/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutTalk(int id, Talk talk)
+        {
+            if (id != talk.TalkID)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(talk).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!TalkExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        private bool TalkExists(int id)
+        {
+            return _context.Talks.Any(e => e.TalkID == id);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Talk>> PostTalk(Talk talk)
+        {
+            _context.Talks.Add(talk);
+            await _context.SaveChangesAsync();
+
+            return Ok(talk);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Talk>> DeleteTalk(int id)
+        {
+            var talk = await _context.Talks.FindAsync(id);
+            if (talk == null)
+            {
+                return NotFound();
+            }
+
+            _context.Talks.Remove(talk);
+            await _context.SaveChangesAsync();
+
+            return talk;
+        }
+    }
+}

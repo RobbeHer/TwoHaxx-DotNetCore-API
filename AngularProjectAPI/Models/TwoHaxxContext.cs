@@ -19,6 +19,7 @@ namespace AngularProjectAPI.Models
         public DbSet<Talk> Talks { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<UserLikeMessage> UserLikeMessage { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,6 +37,7 @@ namespace AngularProjectAPI.Models
 
             modelBuilder.Entity<Message>().ToTable("Messages");
             modelBuilder.Entity<UserLikeMessage>().ToTable("UserLikeMessages");
+            modelBuilder.Entity<Feedback>().ToTable("Feedbacks");
         }
     }
 }
