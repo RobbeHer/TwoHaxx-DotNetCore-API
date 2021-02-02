@@ -29,13 +29,17 @@ namespace AngularProjectAPI.Controllers
 
         // GET: api/Talk/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Talk>> GetTalk(int id)
+        public async Task<ActionResult<Talk>> GetTalk(int id, string code)
         {
             var talk = await _context.Talks.FindAsync(id);
 
             if (talk == null)
             {
                 return NotFound();
+            }
+            if (code != talk.Code)
+            {
+                return BadRequest();
             }
 
             return talk;

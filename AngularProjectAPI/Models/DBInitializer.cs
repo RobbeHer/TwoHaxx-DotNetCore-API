@@ -32,7 +32,7 @@ namespace AngularProjectAPI.Models
             context.SaveChanges();
 
             context.Talks.AddRange(
-                    new Talk { Name = "Talk 1", Description = "Description talk 1", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 1 }
+                    new Talk { Name = "Talk 1", Description = "Description talk 1", Code = "1234", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 1 }
                 );
             context.SaveChanges();
 
@@ -42,6 +42,12 @@ namespace AngularProjectAPI.Models
                     new Message { Content = "Message 3", TimeStamp = new DateTime(), UserID = 3, RoomID = 1 },
                     new Message { Content = "Message 4", TimeStamp = new DateTime(), UserID = 4, RoomID = 1 },
                     new Message { Content = "Message 5", TimeStamp = new DateTime(), UserID = 5, RoomID = 1 }
+                );
+            context.SaveChanges();
+
+            context.Feedbacks.AddRange(
+                    new Feedback { Score = 5, Content = "Good talk.", UserID = 1, TalkID = 1 },
+                    new Feedback { Score = 5, Content = "Good talk.", UserID = 2, TalkID = 1 }
                 );
             context.SaveChanges();
         }

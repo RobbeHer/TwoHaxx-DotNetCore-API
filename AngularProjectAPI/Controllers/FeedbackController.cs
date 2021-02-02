@@ -21,35 +21,35 @@ namespace AngularProjectAPI.Controllers
 
         //[Authorize]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Feedback>>> GetTalks()
+        public async Task<ActionResult<IEnumerable<Feedback>>> GetFeedbacks()
         {
-            return await _context.Talks.ToListAsync();
+            return await _context.Feedbacks.ToListAsync();
         }
 
-        // GET: api/Talk/5
+        // GET: api/Feedback/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Talk>> GetTalk(int id)
+        public async Task<ActionResult<Feedback>> GetFeedback(int id)
         {
-            var talk = await _context.Talks.FindAsync(id);
+            var feedback = await _context.Feedbacks.FindAsync(id);
 
-            if (talk == null)
+            if (feedback == null)
             {
                 return NotFound();
             }
 
-            return talk;
+            return feedback;
         }
 
-        // PUT: api/Talk/5
+        // PUT: api/Feedback/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTalk(int id, Talk talk)
+        public async Task<IActionResult> PutFeedback(int id, Feedback feedback)
         {
-            if (id != talk.TalkID)
+            if (id != feedback.FeedbackID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(talk).State = EntityState.Modified;
+            _context.Entry(feedback).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +57,7 @@ namespace AngularProjectAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TalkExists(id))
+                if (!FeedbackExists(id))
                 {
                     return NotFound();
                 }
@@ -70,33 +70,33 @@ namespace AngularProjectAPI.Controllers
             return NoContent();
         }
 
-        private bool TalkExists(int id)
+        private bool FeedbackExists(int id)
         {
-            return _context.Talks.Any(e => e.TalkID == id);
+            return _context.Feedbacks.Any(e => e.FeedbackID == id);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Talk>> PostTalk(Talk talk)
+        public async Task<ActionResult<Feedback>> PostFeedback(Feedback feedback)
         {
-            _context.Talks.Add(talk);
+            _context.Feedbacks.Add(feedback);
             await _context.SaveChangesAsync();
 
-            return Ok(talk);
+            return Ok(feedback);
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Talk>> DeleteTalk(int id)
+        public async Task<ActionResult<Feedback>> DeleteFeedback(int id)
         {
-            var talk = await _context.Talks.FindAsync(id);
-            if (talk == null)
+            var feedback = await _context.Feedbacks.FindAsync(id);
+            if (feedback == null)
             {
                 return NotFound();
             }
 
-            _context.Talks.Remove(talk);
+            _context.Feedbacks.Remove(feedback);
             await _context.SaveChangesAsync();
 
-            return talk;
+            return feedback;
         }
     }
 }
