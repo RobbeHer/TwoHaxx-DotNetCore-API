@@ -12,8 +12,8 @@ namespace AngularProjectAPI.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string Code { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
 
         // user 1
         public int TalkerID { get; set; }
