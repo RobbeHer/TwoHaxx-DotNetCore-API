@@ -38,6 +38,7 @@
           "Swashbuckle.AspNetCore": "5.5.1",
           "System.Configuration.ConfigurationManager": "5.0.0",
           "System.IdentityModel.Tokens.Jwt": "6.7.1",
+          "ably.io": "1.2.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -294,7 +295,7 @@
           "System.Text.Encodings.Web.Reference": "5.0.0.0",
           "System.Text.Json.Reference": "5.0.0.0",
           "System.Text.RegularExpressions.Reference": "5.0.0.0",
-          "System.Threading.Channels": "5.0.0.0",
+          "System.Threading.Channels.Reference": "5.0.0.0",
           "System.Threading.Reference": "5.0.0.0",
           "System.Threading.Overlapped": "5.0.0.0",
           "System.Threading.Tasks.Dataflow": "5.0.0.0",
@@ -327,6 +328,26 @@
         },
         "compile": {
           "AngularProjectAPI.dll": {}
+        }
+      },
+      "ably.io/1.2.3": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
+          "System.Threading.Channels": "4.6.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/IO.Ably.DeltaCodec.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netstandard2.0/IO.Ably.dll": {
+            "assemblyVersion": "1.2.3.0",
+            "fileVersion": "1.2.3.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/IO.Ably.DeltaCodec.dll": {},
+          "lib/netstandard2.0/IO.Ably.dll": {}
         }
       },
       "Autofac/5.2.0": {
@@ -2459,6 +2480,7 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
+      "System.Threading.Channels/4.6.0": {},
       "System.Threading.Tasks/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "5.0.0",
@@ -4085,7 +4107,7 @@
         },
         "compileOnly": true
       },
-      "System.Threading.Channels/5.0.0.0": {
+      "System.Threading.Channels.Reference/5.0.0.0": {
         "compile": {
           "System.Threading.Channels.dll": {}
         },
@@ -4254,6 +4276,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "ably.io/1.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V6js3PEu4prFO8fOXKynnJEOEFeNKogt3/1p0QrRpPMqHv2Nv1c0xxB5ZtD1UFsWyAl7+No8++hX5QEMRhFk7w==",
+      "path": "ably.io/1.2.3",
+      "hashPath": "ably.io.1.2.3.nupkg.sha512"
     },
     "Autofac/5.2.0": {
       "type": "package",
@@ -5549,6 +5578,13 @@
       "sha512": "sha512-VkUS0kOBcUf3Wwm0TSbrevDDZ6BlM+b/HRiapRFWjM5O0NS0LviG0glKmFK+hhPDd1XFeSdU1GmlLhb2CoVpIw==",
       "path": "system.threading/4.3.0",
       "hashPath": "system.threading.4.3.0.nupkg.sha512"
+    },
+    "System.Threading.Channels/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xdCw/eEo1XwxQNuhTLD10gaXnVt5rkKZCPjttXE5vtqwEkheqdGrNBcbU0UP9zWdgIwZWD+4NEl4OS10jKrZtg==",
+      "path": "system.threading.channels/4.6.0",
+      "hashPath": "system.threading.channels.4.6.0.nupkg.sha512"
     },
     "System.Threading.Tasks/4.3.0": {
       "type": "package",
@@ -6886,7 +6922,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Threading.Channels/5.0.0.0": {
+    "System.Threading.Channels.Reference/5.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

@@ -34,9 +34,23 @@ namespace AngularProjectAPI.Controllers
             return await _context.Talks.Where(x => x.RoomID == id).Include(t => t.Talker).Include(m => m.Moderator).ToListAsync();
         }
 
-        // GET: api/Talk/5
+        // GET: api/Talk/1
         [HttpGet("{id}")]
-        public async Task<ActionResult<Talk>> GetTalk(int id, string code)
+        public async Task<ActionResult<Talk>> GetTalk(int id)
+        {
+            var talk = await _context.Talks.FindAsync(id);
+
+            if (talk == null)
+            {
+                return NotFound();
+            }
+
+            return talk;
+        }
+
+        // GET: api/Talk/join/1?code=1234
+        [HttpGet("join/{id}")]
+        public async Task<ActionResult<Talk>> UserJoinTalk(int id, string code)
         {
             var talk = await _context.Talks.FindAsync(id);
 

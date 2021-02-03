@@ -1,5 +1,6 @@
 ﻿using AngularProjectAPI.Models;
 using AngularProjectAPI.Services;
+using IO.Ably;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -20,16 +21,26 @@ namespace AngularProjectAPI.Controllers
             _context = context;
         }
 
+        [HttpGet("sendmsg")]
+        public async Task<ActionResult<string>> SendMessages()
+        {
+            ClientOptions clientOptions = new ClientOptions("P00bXw.opuSTw:aX_M6hXKsMuN95ZQ");
+            AblyRest rest = new AblyRest(clientOptions);
+            var channel = rest.Channels.Get("testRoom1");
+            await channel.PublishAsync("example", "{'type': 'test', 'data': 'my payload 2'}");
+            return "ok";
+        }
+
         //[Authorize]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Message>>> GetMessages()
+        public async Task<ActionResult<IEnumerable<Models.Message>>> GetMessages()
         {
             return await _context.Messages.ToListAsync();
         }
 
         // GET: api/Message/room/5
         [HttpGet("room/{id}")]
-        public async Task<ActionResult<IEnumerable<Message>>> GetMessagesOfRoom(int id)
+        public async Task<ActionResult<IEnumerable<Models.Message>>> GetMessagesOfRoom(int id)
         {
             var messages = await _context.Messages.Where(x => x.RoomID == id).ToListAsync();
 
@@ -48,7 +59,7 @@ namespace AngularProjectAPI.Controllers
 
         // GET: api/Message/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Message>> GetMessage(int id)
+        public async Task<ActionResult<Models.Message>> GetMessage(int id)
         {
             var message = await _context.Messages.FindAsync(id);
 
@@ -64,7 +75,7 @@ namespace AngularProjectAPI.Controllers
 
         // PUT: api/Message/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMessage(int id, Message message)
+        public async Task<IActionResult> PutMessage(int id, Models.Message message)
         {
             if (id != message.MessageID)
             {
@@ -98,7 +109,7 @@ namespace AngularProjectAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Message>> PostMessage(Message message)
+        public async Task<ActionResult<Models.Message>> PostMessage(Models.Message message)
         {
             _context.Messages.Add(message);
             await _context.SaveChangesAsync();
@@ -107,7 +118,7 @@ namespace AngularProjectAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Message>> DeleteMessage(int id)
+        public async Task<ActionResult<Models.Message>> DeleteMessage(int id)
         {
             var message = await _context.Messages.FindAsync(id);
             if (message == null)
