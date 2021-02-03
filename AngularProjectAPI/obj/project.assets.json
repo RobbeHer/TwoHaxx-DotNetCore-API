@@ -2,6 +2,21 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "ably.io/1.2.3": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1",
+          "System.Threading.Channels": "4.6.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/IO.Ably.DeltaCodec.dll": {},
+          "lib/netstandard2.0/IO.Ably.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/IO.Ably.DeltaCodec.dll": {},
+          "lib/netstandard2.0/IO.Ably.dll": {}
+        }
+      },
       "Autofac/5.2.0": {
         "type": "package",
         "compile": {
@@ -2937,6 +2952,15 @@
           "lib/netstandard1.3/System.Threading.dll": {}
         }
       },
+      "System.Threading.Channels/4.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/System.Threading.Channels.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Threading.Channels.dll": {}
+        }
+      },
       "System.Threading.Tasks/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3087,6 +3111,57 @@
     }
   },
   "libraries": {
+    "ably.io/1.2.3": {
+      "sha512": "V6js3PEu4prFO8fOXKynnJEOEFeNKogt3/1p0QrRpPMqHv2Nv1c0xxB5ZtD1UFsWyAl7+No8++hX5QEMRhFk7w==",
+      "type": "package",
+      "path": "ably.io/1.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ably.io.1.2.3.nupkg.sha512",
+        "ably.io.nuspec",
+        "lib/Xamarin.iOS/IO.Ably.DeltaCodec.dll",
+        "lib/Xamarin.iOS/IO.Ably.DeltaCodec.pdb",
+        "lib/Xamarin.iOS/IO.Ably.DeltaCodec.xml",
+        "lib/Xamarin.iOS/IO.Ably.dll",
+        "lib/Xamarin.iOS/IO.Ably.dll.config",
+        "lib/Xamarin.iOS/IO.Ably.pdb",
+        "lib/monoandroid/IO.Ably.DeltaCodec.dll",
+        "lib/monoandroid/IO.Ably.DeltaCodec.pdb",
+        "lib/monoandroid/IO.Ably.DeltaCodec.xml",
+        "lib/monoandroid/IO.Ably.dll",
+        "lib/monoandroid/IO.Ably.dll.config",
+        "lib/monoandroid/IO.Ably.pdb",
+        "lib/monotouch/IO.Ably.DeltaCodec.dll",
+        "lib/monotouch/IO.Ably.DeltaCodec.pdb",
+        "lib/monotouch/IO.Ably.DeltaCodec.xml",
+        "lib/monotouch/IO.Ably.dll",
+        "lib/monotouch/IO.Ably.dll.config",
+        "lib/monotouch/IO.Ably.pdb",
+        "lib/net46/IO.Ably.DeltaCodec.dll",
+        "lib/net46/IO.Ably.DeltaCodec.pdb",
+        "lib/net46/IO.Ably.DeltaCodec.xml",
+        "lib/net46/IO.Ably.dll",
+        "lib/net46/IO.Ably.dll.config",
+        "lib/net46/IO.Ably.pdb",
+        "lib/net46/IO.Ably.xml",
+        "lib/netstandard2.0/IO.Ably.DeltaCodec.dll",
+        "lib/netstandard2.0/IO.Ably.DeltaCodec.pdb",
+        "lib/netstandard2.0/IO.Ably.DeltaCodec.xml",
+        "lib/netstandard2.0/IO.Ably.NETStandard20.xml",
+        "lib/netstandard2.0/IO.Ably.deps.json",
+        "lib/netstandard2.0/IO.Ably.dll",
+        "lib/netstandard2.0/IO.Ably.dll.config",
+        "lib/netstandard2.0/IO.Ably.pdb",
+        "lib/uap/IO.Ably.DeltaCodec.dll",
+        "lib/uap/IO.Ably.DeltaCodec.pdb",
+        "lib/uap/IO.Ably.DeltaCodec.xml",
+        "lib/uap/IO.Ably.dll",
+        "lib/uap/IO.Ably.dll.config",
+        "lib/uap/IO.Ably.pdb",
+        "lib/uap/IO.Ably.pri"
+      ]
+    },
     "Autofac/5.2.0": {
       "sha512": "V8dBH0dsv75uDzl7Sw+HkhKDPUw2eXnlMjcSVMH+tLo2s67MpTKGyDj1pDcpR+IF2u4YRs0s3/x7R88YJzIWvg==",
       "type": "package",
@@ -9320,6 +9395,27 @@
         "system.threading.nuspec"
       ]
     },
+    "System.Threading.Channels/4.6.0": {
+      "sha512": "xdCw/eEo1XwxQNuhTLD10gaXnVt5rkKZCPjttXE5vtqwEkheqdGrNBcbU0UP9zWdgIwZWD+4NEl4OS10jKrZtg==",
+      "type": "package",
+      "path": "system.threading.channels/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.0/System.Threading.Channels.dll",
+        "lib/netcoreapp3.0/System.Threading.Channels.xml",
+        "lib/netstandard1.3/System.Threading.Channels.dll",
+        "lib/netstandard1.3/System.Threading.Channels.xml",
+        "lib/netstandard2.0/System.Threading.Channels.dll",
+        "lib/netstandard2.0/System.Threading.Channels.xml",
+        "system.threading.channels.4.6.0.nupkg.sha512",
+        "system.threading.channels.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Threading.Tasks/4.3.0": {
       "sha512": "LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "type": "package",
@@ -9767,7 +9863,8 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4",
       "Swashbuckle.AspNetCore >= 5.5.1",
       "System.Configuration.ConfigurationManager >= 5.0.0",
-      "System.IdentityModel.Tokens.Jwt >= 6.7.1"
+      "System.IdentityModel.Tokens.Jwt >= 6.7.1",
+      "ably.io >= 1.2.3"
     ]
   },
   "packageFolders": {
@@ -9862,6 +9959,10 @@
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
             "version": "[6.7.1, )"
+          },
+          "ably.io": {
+            "target": "Package",
+            "version": "[1.2.3, )"
           }
         },
         "imports": [

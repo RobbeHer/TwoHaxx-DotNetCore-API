@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "YJr9c+QAwNK9zFQ84A9kSmCF3p00vVLmAj0OqiFzXy2z7b7/C8DUKozCF/CIiaL93J2kZ5Bw4pC0fP18Ri8Tbw==",
+  "dgSpecHash": "zE834UNLAPjV0K89e1/OOjCqZOrWsrbtsA2dZjqLYKnX7OEf49RLCeCcr2/9VVISbuKjc+8lCPtwocSbJ2B/fg==",
   "success": true,
   "projectFilePath": "C:\\Users\\radar\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\radar\\.nuget\\packages\\ably.io\\1.2.3\\ably.io.1.2.3.nupkg.sha512",
     "C:\\Users\\radar\\.nuget\\packages\\autofac\\5.2.0\\autofac.5.2.0.nupkg.sha512",
     "C:\\Users\\radar\\.nuget\\packages\\autofac.extensions.dependencyinjection\\6.0.0\\autofac.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\radar\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
@@ -189,6 +190,7 @@
     "C:\\Users\\radar\\.nuget\\packages\\system.text.json\\4.7.1\\system.text.json.4.7.1.nupkg.sha512",
     "C:\\Users\\radar\\.nuget\\packages\\system.text.regularexpressions\\4.3.0\\system.text.regularexpressions.4.3.0.nupkg.sha512",
     "C:\\Users\\radar\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
+    "C:\\Users\\radar\\.nuget\\packages\\system.threading.channels\\4.6.0\\system.threading.channels.4.6.0.nupkg.sha512",
     "C:\\Users\\radar\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\radar\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.3\\system.threading.tasks.extensions.4.5.3.nupkg.sha512",
     "C:\\Users\\radar\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",

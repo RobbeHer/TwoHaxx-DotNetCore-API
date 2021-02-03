@@ -484,3 +484,5 @@ C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5
 C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5.0\AngularProjectAPI.RazorTargetAssemblyInfo.cache
 C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5.0\AngularProjectAPI.csproj.CopyComplete
 C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Debug\net5.0\AngularProjectAPI.genruntimeconfig.cache
+C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\bin\Debug\net5.0\IO.Ably.DeltaCodec.dll
+C:\Users\radar\Documents\TwoHaxx-DotNetCore-API\AngularProjectAPI\bin\Debug\net5.0\IO.Ably.dll
