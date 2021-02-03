@@ -2,12 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>4539898c-8f9d-4c56-8a8e-5634940e2488</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/562d9a34-ee36-4057-9fc1-0d807ed65bda/resourceGroups/twohaxx/providers/microsoft.insights/components/backend-insights</ApplicationInsightsResourceId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="ably.io" Version="1.2.3" />
     <PackageReference Include="Dapper.Extensions.NetCore" Version="3.2.0" />
     <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.7" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
