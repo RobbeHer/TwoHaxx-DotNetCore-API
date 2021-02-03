@@ -44,12 +44,12 @@ namespace AngularProjectAPI.Models
 
 
             context.Talks.AddRange(
-                    new Talk { Name = "Talk 1", Description = "Description talk 1", Code = "1234", StartTime = "12:00", EndTime = "13:00", TalkerID = 3, ModeratorID = 4, RoomID = 1 },
-                    new Talk { Name = "Talk 2", Description = "Description talk 2", Code = "1234", StartTime = "12:00", EndTime = "13:00", TalkerID = 3, ModeratorID = 4, RoomID = 1 },
-                    new Talk { Name = "Talk 3", Description = "Description talk 3", Code = "1234", StartTime = "12:00", EndTime = "13:00", TalkerID = 3, ModeratorID = 4, RoomID = 1 },
-                    new Talk { Name = "Talk 4", Description = "Description talk 4", Code = "1234", StartTime = "12:00", EndTime = "13:00", TalkerID = 3, ModeratorID = 4, RoomID = 1 },
-                    new Talk { Name = "Talk 1", Description = "Description talk 1", Code = "1234", StartTime = "12:00", EndTime = "13:00", TalkerID = 3, ModeratorID = 4, RoomID = 2 },
-                    new Talk { Name = "Talk 2", Description = "Description talk 2", Code = "1234", StartTime = "12:00", EndTime = "13:00", TalkerID = 3, ModeratorID = 4, RoomID = 2 }
+                                        new Talk { Name = "Talk 1", Description = "Description talk 1", Code = "1234", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 1 },
+                    new Talk { Name = "Talk 2", Description = "Description talk 2", Code = "1234", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 1 },
+                    new Talk { Name = "Talk 3", Description = "Description talk 3", Code = "1234", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 1 },
+                    new Talk { Name = "Talk 4", Description = "Description talk 4", Code = "1234", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 1 },
+                    new Talk { Name = "Talk 1", Description = "Description talk 1", Code = "1234", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 2 },
+                    new Talk { Name = "Talk 2", Description = "Description talk 2", Code = "1234", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 2 }
                 );
             ;
             context.SaveChanges();
