@@ -27,9 +27,6 @@ namespace AngularProjectAPI.Models
                     new User { FirstName = "Guest3", LastName = "Guest3", Email = "guest3@test.be", Password = "1234", IsAdmin = false, IsGuest = true },
                     new User { FirstName = "Guest4", LastName = "Guest4", Email = "guest3@test.be", Password = "1234", IsAdmin = false, IsGuest = true },
                     new User { FirstName = "Guest5", LastName = "Guest5", Email = "guest5@test.be", Password = "1234", IsAdmin = false, IsGuest = true }
-
-
-
                 );
             context.SaveChanges();
 
@@ -44,7 +41,7 @@ namespace AngularProjectAPI.Models
 
 
             context.Talks.AddRange(
-                                        new Talk { Name = "Talk 1", Description = "Description talk 1", Code = "1234", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 1 },
+                    new Talk { Name = "Talk 1", Description = "Description talk 1", Code = "1234", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 1 },
                     new Talk { Name = "Talk 2", Description = "Description talk 2", Code = "1234", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 1 },
                     new Talk { Name = "Talk 3", Description = "Description talk 3", Code = "1234", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 1 },
                     new Talk { Name = "Talk 4", Description = "Description talk 4", Code = "1234", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 1 },
@@ -57,11 +54,11 @@ namespace AngularProjectAPI.Models
 
 
             context.Messages.AddRange(
-                    new Message { Content = "Message 1", TimeStamp = new DateTime(), UserID = 1, RoomID = 1 },
-                    new Message { Content = "Message 2", TimeStamp = new DateTime(), UserID = 2, RoomID = 1 },
-                    new Message { Content = "Message 3", TimeStamp = new DateTime(), UserID = 3, RoomID = 1 },
-                    new Message { Content = "Message 4", TimeStamp = new DateTime(), UserID = 4, RoomID = 1 },
-                    new Message { Content = "Message 5", TimeStamp = new DateTime(), UserID = 5, RoomID = 1 }
+                    new Message { Content = "Message 1", Likes = 0, TimeStamp = new DateTime(), UserID = 1, TalkID = 1 },
+                    new Message { Content = "Message 2", Likes = 0, TimeStamp = new DateTime(), UserID = 2, TalkID = 1 },
+                    new Message { Content = "Message 3", Likes = 0, TimeStamp = new DateTime(), UserID = 3, TalkID = 1 },
+                    new Message { Content = "Message 4", Likes = 0, TimeStamp = new DateTime(), UserID = 4, TalkID = 1 },
+                    new Message { Content = "Message 5", Likes = 0, TimeStamp = new DateTime(), UserID = 5, TalkID = 1 }
                 );
             context.SaveChanges();
 
@@ -72,8 +69,8 @@ namespace AngularProjectAPI.Models
             context.SaveChanges();
 
             context.Polls.AddRange(
-                    new Poll { Name = "Poll 1", Question = "My question", RoomID = 1 },
-                    new Poll { Name = "Poll 2", Question = "My second question", RoomID = 1 }
+                    new Poll { Name = "Poll 1", Question = "My question", TalkID = 1 },
+                    new Poll { Name = "Poll 2", Question = "My second question", TalkID = 1 }
                 );
             context.SaveChanges();
 

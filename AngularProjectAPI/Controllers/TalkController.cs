@@ -24,7 +24,7 @@ namespace AngularProjectAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Talk>>> GetTalks()
         {
-            return await _context.Talks.Include(t=>t.Talker).Include(m=>m.Moderator).ToListAsync();
+            return await _context.Talks.Include(t => t.Talker).Include(m => m.Moderator).ToListAsync();
         }
 
         // GET: api/Talk/talks-of-room/5
@@ -62,6 +62,10 @@ namespace AngularProjectAPI.Controllers
             {
                 return BadRequest();
             }
+
+            /*talk.Talker = _context.Users.Where(x => x.UserID == talk.TalkerID).FirstOrDefault();
+            talk.Moderator = _context.Users.Where(x => x.UserID == talk.ModeratorID).FirstOrDefault();
+            talk.Room = _context.Rooms.Where(x => x.RoomID == talk.RoomID).FirstOrDefault();*/
 
             return talk;
         }

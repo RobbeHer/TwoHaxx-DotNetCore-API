@@ -15,7 +15,9 @@ namespace AngularProjectAPI.Models
         // Relations
         /*public int PollTypeID { get; set; }
         public PollType PollType { get; set; }*/
-        public int RoomID { get; set; }
-        public Room Room { get; set; }
+        //public int RoomID { get; set; }
+        //public Room Room { get; set; }
+        public int TalkID { get; set; }
+        public Talk Talk { get; set; }
     }
 }

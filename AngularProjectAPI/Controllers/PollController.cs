@@ -35,7 +35,7 @@ namespace AngularProjectAPI.Controllers
         [HttpGet("polls-of-room/{id}")]
         public async Task<ActionResult<IEnumerable<Poll>>> GetPollsOfRoom(int id)
         {
-            var polls = await _context.Polls.Where(x => x.RoomID == id).ToListAsync();
+            var polls = await _context.Polls.Where(x => x.TalkID == id).ToListAsync();
             foreach (var poll in polls)
             {
                 poll.PollOptions = _context.PollOptions.Where(x => x.PollID == poll.PollID).ToArray();
