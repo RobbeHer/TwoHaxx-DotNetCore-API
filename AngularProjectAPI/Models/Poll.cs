@@ -18,6 +18,6 @@ namespace AngularProjectAPI.Models
         //public int RoomID { get; set; }
         //public Room Room { get; set; }
         public int TalkID { get; set; }
-        public Room Talk { get; set; }
+        public Talk Talk { get; set; }
     }
 }
