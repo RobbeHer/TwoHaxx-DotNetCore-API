@@ -63,6 +63,10 @@ namespace AngularProjectAPI.Controllers
                 return BadRequest();
             }
 
+            /*talk.Talker = _context.Users.Where(x => x.UserID == talk.TalkerID).FirstOrDefault();
+            talk.Moderator = _context.Users.Where(x => x.UserID == talk.ModeratorID).FirstOrDefault();
+            talk.Room = _context.Rooms.Where(x => x.RoomID == talk.RoomID).FirstOrDefault();*/
+
             return talk;
         }
 
