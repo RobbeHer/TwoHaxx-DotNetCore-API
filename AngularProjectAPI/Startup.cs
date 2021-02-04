@@ -103,6 +103,7 @@ namespace AngularProjectAPI
             services.AddDbContext<TwoHaxxContext>(opt =>
                 opt.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddApplicationInsightsTelemetry(Configuration["APPINSIGHTS_CONNECTIONSTRING"]);
 
         }
 

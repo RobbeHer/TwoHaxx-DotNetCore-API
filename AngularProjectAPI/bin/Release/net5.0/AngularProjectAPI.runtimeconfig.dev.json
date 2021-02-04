@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Neotime\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Neotime\\.nuget\\packages"
+    ]
+  }
+}
