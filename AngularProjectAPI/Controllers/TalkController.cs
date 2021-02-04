@@ -50,24 +50,19 @@ namespace AngularProjectAPI.Controllers
 
         // GET: api/Talk/join/1?code=1234
         [HttpGet("join/{id}")]
-        public async Task<ActionResult<Talk>> UserJoinTalk(int id, string code)
+        public async Task<ActionResult<bool>> UserJoinTalk(int id, string code)
         {
             var talk = await _context.Talks.FindAsync(id);
 
-            if (talk == null)
+            if (talk == null) { return NotFound(); }
+            if (code == talk.Code)
             {
-                return NotFound();
+                return true;
             }
-            if (code != talk.Code)
+            else
             {
-                return BadRequest();
+                return false;
             }
-
-            /*talk.Talker = _context.Users.Where(x => x.UserID == talk.TalkerID).FirstOrDefault();
-            talk.Moderator = _context.Users.Where(x => x.UserID == talk.ModeratorID).FirstOrDefault();
-            talk.Room = _context.Rooms.Where(x => x.RoomID == talk.RoomID).FirstOrDefault();*/
-
-            return talk;
         }
 
         // PUT: api/Talk/5
