@@ -158,6 +158,19 @@ namespace AngularProjectAPI.Controllers
                 return NotFound();
             }
 
+            // first remove all userLikeMessages before deleting the message
+            UserLikeMessageController userLikeMessageController = new UserLikeMessageController(_context);
+            var userLikeMessages = await _context.UserLikeMessage.Where(x => x.MessageID == id).ToListAsync();
+
+            if (userLikeMessages != null)
+            {
+                foreach (var userLikeMessage in userLikeMessages)
+                {
+                    await userLikeMessageController.DeleteUserLikeMessage(userLikeMessage);
+                }
+            }
+
+            // delte message
             _context.Messages.Remove(message);
             await _context.SaveChangesAsync();
 
@@ -168,10 +181,10 @@ namespace AngularProjectAPI.Controllers
         [HttpPost("user-like-message")]
         public async Task<ActionResult<UserLikeMessage>> PostUserLikeMessage(UserLikeMessage userLikeMessage)
         {
-            _context.UserLikeMessage.Add(userLikeMessage);
-            await _context.SaveChangesAsync();
+            UserLikeMessageController userLikeMessageController = new UserLikeMessageController(_context); 
+            var result = await userLikeMessageController.PostUserLikeMessage(userLikeMessage);
 
-            return Ok(userLikeMessage);
+            return Ok(result);
         }
     }
 }
