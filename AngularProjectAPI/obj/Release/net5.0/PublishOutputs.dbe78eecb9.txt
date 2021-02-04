@@ -4,6 +4,8 @@ C:\Users\Neotime\source\repos\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Relea
 C:\Users\Neotime\source\repos\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Release\net5.0\PubTmp\Out\AngularProjectAPI.dll
 C:\Users\Neotime\source\repos\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Release\net5.0\PubTmp\Out\AngularProjectAPI.runtimeconfig.json
 C:\Users\Neotime\source\repos\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Release\net5.0\PubTmp\Out\AngularProjectAPI.pdb
+C:\Users\Neotime\source\repos\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Release\net5.0\PubTmp\Out\IO.Ably.DeltaCodec.dll
+C:\Users\Neotime\source\repos\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Release\net5.0\PubTmp\Out\IO.Ably.dll
 C:\Users\Neotime\source\repos\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Release\net5.0\PubTmp\Out\Autofac.dll
 C:\Users\Neotime\source\repos\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Release\net5.0\PubTmp\Out\Autofac.Extensions.DependencyInjection.dll
 C:\Users\Neotime\source\repos\TwoHaxx-DotNetCore-API\AngularProjectAPI\obj\Release\net5.0\PubTmp\Out\Dapper.dll

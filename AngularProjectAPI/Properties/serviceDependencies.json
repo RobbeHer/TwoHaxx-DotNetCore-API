@@ -7,12 +7,12 @@
       "type": "mssql",
       "connectionId": "DefaultConnection"
     },
-    "apis1": {
-      "type": "apis"
-    },
     "appInsights1": {
       "type": "appInsights",
       "connectionId": "APPINSIGHTS_CONNECTIONSTRING"
+    },
+    "apis1": {
+      "type": "apis"
     }
   }
 }
