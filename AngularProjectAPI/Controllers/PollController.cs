@@ -1,9 +1,11 @@
 ﻿using AngularProjectAPI.Models;
+using IO.Ably;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace AngularProjectAPI.Controllers
@@ -13,10 +15,28 @@ namespace AngularProjectAPI.Controllers
     public class PollController : ControllerBase
     {
         private readonly TwoHaxxContext _context;
+        ClientOptions clientOptions;
+        AblyRest rest;
 
         public PollController(TwoHaxxContext context)
         {
             _context = context;
+            clientOptions = new ClientOptions("P00bXw.opuSTw:aX_M6hXKsMuN95ZQ");
+            rest = new AblyRest(clientOptions);
+        }
+
+        private async Task<ActionResult<Poll>> PublishNewAvailablePoll(Poll poll)
+        {
+            var channel = rest.Channels.Get("talkChannel" + poll.TalkID.ToString());
+            await channel.PublishAsync("newAvailablePoll", JsonSerializer.Serialize(poll));
+            return Ok(poll);
+        }
+
+        private async Task<ActionResult<Poll>> PublishPollToHide(Poll poll)
+        {
+            var channel = rest.Channels.Get("talkChannel" + poll.TalkID.ToString());
+            await channel.PublishAsync("hidePoll", JsonSerializer.Serialize(poll));
+            return Ok(poll);
         }
 
         //[Authorize]
@@ -101,6 +121,31 @@ namespace AngularProjectAPI.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(poll);
+        }
+
+        [HttpPost("vote-user")]
+        public async Task<ActionResult<Poll>> PostVoteOnPoll(VoteUser voteUser)
+        {
+            VoteUserController voteUserController = new VoteUserController(_context);
+            var result = await voteUserController.PostVoteUser(voteUser);
+
+            return Ok(result);
+        }
+
+        [HttpPost("make-available")]
+        public async Task<ActionResult<Poll>> PostnewAvailablePoll(Poll poll)
+        {
+            var result = await PublishNewAvailablePoll(poll);
+
+            return Ok(result);
+        }
+
+        [HttpPost("hide")]
+        public async Task<ActionResult<Poll>> PostPollToHide(Poll poll)
+        {
+            var result = await PublishPollToHide(poll);
+
+            return Ok(result);
         }
 
         [HttpDelete("{id}")]

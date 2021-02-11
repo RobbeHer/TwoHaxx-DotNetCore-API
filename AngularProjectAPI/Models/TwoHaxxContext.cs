@@ -22,6 +22,7 @@ namespace AngularProjectAPI.Models
         public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<Poll> Polls { get; set; }
         public DbSet<PollOption> PollOptions { get; set; }
+        public DbSet<VoteUser> VoteUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -42,6 +43,7 @@ namespace AngularProjectAPI.Models
             modelBuilder.Entity<Feedback>().ToTable("Feedbacks");
             modelBuilder.Entity<Poll>().ToTable("Polls");
             modelBuilder.Entity<PollOption>().ToTable("PollOptions");
+            modelBuilder.Entity<VoteUser>().ToTable("VoteUsers");
         }
     }
 }

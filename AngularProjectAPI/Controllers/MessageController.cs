@@ -48,13 +48,6 @@ namespace AngularProjectAPI.Controllers
             return Ok(message);
         }
 
-        private async Task<ActionResult<UserLikeMessage>> PublishLikeOnMessage(UserLikeMessage userLikeMessage)
-        {
-            var channel = rest.Channels.Get("talkChannel" + userLikeMessage.Message.TalkID.ToString());
-            await channel.PublishAsync("likeOnChatMessage", JsonSerializer.Serialize(userLikeMessage));
-            return Ok(userLikeMessage);
-        }
-
         //[Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Models.Message>>> GetMessages()
@@ -119,15 +112,14 @@ namespace AngularProjectAPI.Controllers
         [HttpPost("liked/")]
         public async Task<ActionResult<UserLikeMessage>> PostLikeOnMessage(UserLikeMessage userLikeMessage)
         {
-            UserLikeMessage userLikeMessageFillUp = new UserLikeMessage()
-            {
-                UserID = userLikeMessage.UserID,
-                MessageID = userLikeMessage.MessageID,
-            };
-            _context.UserLikeMessage.Add(userLikeMessageFillUp);
-            await _context.SaveChangesAsync();
+            UserLikeMessageController userLikeMessageController = new UserLikeMessageController(_context);
+            var result = await userLikeMessageController.PostUserLikeMessage(new UserLikeMessage()
+                {
+                    UserID = userLikeMessage.UserID,
+                    MessageID = userLikeMessage.MessageID,
+                }
+            );
 
-            var result = await PublishLikeOnMessage(userLikeMessage);
             return Ok(result);
         }
 
