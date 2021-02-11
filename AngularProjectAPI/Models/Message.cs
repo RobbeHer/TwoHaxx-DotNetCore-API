@@ -9,6 +9,8 @@ namespace AngularProjectAPI.Models
     {
         public int MessageID { get; set; }
         public string Content { get; set; }
+        public bool IsQuestion { get; set; }
+        public bool IsAnswered { get; set; }
         public int Likes { get; set; }
         public ICollection<User> LikedBy { get; set; }
         public DateTime TimeStamp { get; set; }

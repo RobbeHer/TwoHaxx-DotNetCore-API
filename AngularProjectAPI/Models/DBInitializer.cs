@@ -30,15 +30,11 @@ namespace AngularProjectAPI.Models
                 );
             context.SaveChanges();
 
-
-
             context.Rooms.AddRange(
                     new Room { Name = "Room 1", Description = "Description room 1", StartDate = new DateTime(), EndDate = new DateTime() },
                     new Room { Name = "Room 2", Description = "Description room 2", StartDate = new DateTime(), EndDate = new DateTime() }
                 );
             context.SaveChanges();
-
-
 
             context.Talks.AddRange(
                     new Talk { Name = "Talk 1", Description = "Description talk 1", Code = "1234", StartDate = new DateTime(), EndDate = new DateTime(), TalkerID = 3, ModeratorID = 4, RoomID = 1 },
@@ -51,14 +47,12 @@ namespace AngularProjectAPI.Models
             ;
             context.SaveChanges();
 
-
-
             context.Messages.AddRange(
-                    new Message { Content = "Message 1", Likes = 0, TimeStamp = new DateTime(), UserID = 1, TalkID = 1 },
-                    new Message { Content = "Message 2", Likes = 0, TimeStamp = new DateTime(), UserID = 2, TalkID = 1 },
-                    new Message { Content = "Message 3", Likes = 0, TimeStamp = new DateTime(), UserID = 3, TalkID = 1 },
-                    new Message { Content = "Message 4", Likes = 0, TimeStamp = new DateTime(), UserID = 4, TalkID = 1 },
-                    new Message { Content = "Message 5", Likes = 0, TimeStamp = new DateTime(), UserID = 5, TalkID = 1 }
+                    new Message { Content = "Message 1", IsQuestion = false, IsAnswered = true, Likes = 0, TimeStamp = new DateTime(), UserID = 1, TalkID = 1 },
+                    new Message { Content = "Message 2", IsQuestion = false, IsAnswered = true, Likes = 0, TimeStamp = new DateTime(), UserID = 2, TalkID = 1 },
+                    new Message { Content = "Message 3", IsQuestion = false, IsAnswered = true, Likes = 0, TimeStamp = new DateTime(), UserID = 3, TalkID = 1 },
+                    new Message { Content = "Message 4", IsQuestion = false, IsAnswered = true, Likes = 0, TimeStamp = new DateTime(), UserID = 4, TalkID = 1 },
+                    new Message { Content = "Message 5", IsQuestion = false, IsAnswered = true, Likes = 0, TimeStamp = new DateTime(), UserID = 5, TalkID = 1 }
                 );
             context.SaveChanges();
 
