@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <PackageReference Include="ably.io" Version="1.2.3" />
-    <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.0.0" />
-    <PackageReference Include="Azure.Identity" Version="1.2.2" />
     <PackageReference Include="Dapper.Extensions.NetCore" Version="3.2.0" />
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.15.0" />
