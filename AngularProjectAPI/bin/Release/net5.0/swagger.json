@@ -149,26 +149,6 @@
         }
       }
     },
-    "/api/Message/sendmsg": {
-      "get": {
-        "tags": [
-          "Message"
-        ],
-        "produces": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "type": "string"
-            }
-          }
-        }
-      }
-    },
     "/api/Message": {
       "get": {
         "tags": [
@@ -340,6 +320,41 @@
             "description": "Success",
             "schema": {
               "$ref": "#/definitions/Message"
+            }
+          }
+        }
+      }
+    },
+    "/api/Message/liked": {
+      "post": {
+        "tags": [
+          "Message"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UserLikeMessage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/UserLikeMessage"
             }
           }
         }
@@ -561,6 +576,111 @@
         }
       }
     },
+    "/api/Poll/vote-user": {
+      "post": {
+        "tags": [
+          "Poll"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/VoteUser"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Poll"
+            }
+          }
+        }
+      }
+    },
+    "/api/Poll/make-available": {
+      "post": {
+        "tags": [
+          "Poll"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Poll"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Poll"
+            }
+          }
+        }
+      }
+    },
+    "/api/Poll/hide": {
+      "post": {
+        "tags": [
+          "Poll"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Poll"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Poll"
+            }
+          }
+        }
+      }
+    },
     "/api/PollOption": {
       "get": {
         "tags": [
@@ -706,6 +826,189 @@
             "schema": {
               "$ref": "#/definitions/PollOption"
             }
+          }
+        }
+      }
+    },
+    "/api/Question": {
+      "get": {
+        "tags": [
+          "Question"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Message"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Question"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        }
+      }
+    },
+    "/api/Question/room/{id}": {
+      "get": {
+        "tags": [
+          "Question"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Message"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Question/{id}": {
+      "put": {
+        "tags": [
+          "Question"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Question"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        }
+      }
+    },
+    "/api/Question/answered/{id}": {
+      "put": {
+        "tags": [
+          "Question"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
           }
         }
       }
@@ -1110,7 +1413,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/Talk"
+              "type": "boolean"
             }
           }
         }
@@ -1447,6 +1750,22 @@
         "content": {
           "type": "string"
         },
+        "isQuestion": {
+          "type": "boolean"
+        },
+        "isAnswered": {
+          "type": "boolean"
+        },
+        "likes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "likedBy": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/User"
+          }
+        },
         "timeStamp": {
           "format": "date-time",
           "type": "string"
@@ -1458,12 +1777,12 @@
         "user": {
           "$ref": "#/definitions/User"
         },
-        "roomID": {
+        "talkID": {
           "format": "int32",
           "type": "integer"
         },
-        "room": {
-          "$ref": "#/definitions/Room"
+        "talk": {
+          "$ref": "#/definitions/Talk"
         }
       }
     },
@@ -1528,12 +1847,35 @@
             "$ref": "#/definitions/PollOption"
           }
         },
-        "roomID": {
+        "talkID": {
           "format": "int32",
           "type": "integer"
         },
-        "room": {
-          "$ref": "#/definitions/Room"
+        "talk": {
+          "$ref": "#/definitions/Talk"
+        }
+      }
+    },
+    "VoteUser": {
+      "type": "object",
+      "properties": {
+        "voteUserID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "userID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        },
+        "pollOptionID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pollOption": {
+          "$ref": "#/definitions/PollOption"
         }
       }
     }
