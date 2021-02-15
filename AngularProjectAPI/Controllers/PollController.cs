@@ -27,14 +27,14 @@ namespace AngularProjectAPI.Controllers
 
         private async Task<ActionResult<Poll>> PublishNewAvailablePoll(Poll poll)
         {
-            var channel = rest.Channels.Get("talkChannel" + poll.TalkID.ToString());
+            var channel = rest.Channels.Get("pollChannel" + poll.TalkID.ToString());
             await channel.PublishAsync("newAvailablePoll", JsonSerializer.Serialize(poll));
             return Ok(poll);
         }
 
         private async Task<ActionResult<Poll>> PublishPollToHide(Poll poll)
         {
-            var channel = rest.Channels.Get("talkChannel" + poll.TalkID.ToString());
+            var channel = rest.Channels.Get("pollChannel" + poll.TalkID.ToString());
             await channel.PublishAsync("hidePoll", JsonSerializer.Serialize(poll));
             return Ok(poll);
         }

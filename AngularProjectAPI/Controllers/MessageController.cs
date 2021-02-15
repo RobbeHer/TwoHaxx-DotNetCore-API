@@ -113,12 +113,7 @@ namespace AngularProjectAPI.Controllers
         public async Task<ActionResult<UserLikeMessage>> PostLikeOnMessage(UserLikeMessage userLikeMessage)
         {
             UserLikeMessageController userLikeMessageController = new UserLikeMessageController(_context);
-            var result = await userLikeMessageController.PostUserLikeMessage(new UserLikeMessage()
-                {
-                    UserID = userLikeMessage.UserID,
-                    MessageID = userLikeMessage.MessageID,
-                }
-            );
+            var result = await userLikeMessageController.PostUserLikeMessage(userLikeMessage);
 
             return Ok(result);
         }
@@ -167,15 +162,6 @@ namespace AngularProjectAPI.Controllers
             await _context.SaveChangesAsync();
 
             var result = await PublishDeletedMessage(message);
-            return Ok(result);
-        }
-
-        [HttpPost("user-like-message")]
-        public async Task<ActionResult<UserLikeMessage>> PostUserLikeMessage(UserLikeMessage userLikeMessage)
-        {
-            UserLikeMessageController userLikeMessageController = new UserLikeMessageController(_context); 
-            var result = await userLikeMessageController.PostUserLikeMessage(userLikeMessage);
-
             return Ok(result);
         }
     }

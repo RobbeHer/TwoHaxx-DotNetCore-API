@@ -24,7 +24,7 @@ namespace AngularProjectAPI.Controllers
 
         private async Task<ActionResult<VoteUser>> PublishVoteUser(VoteUser voteUser)
         {
-            var channel = rest.Channels.Get("talkChannel" + voteUser.PollOption.Poll.TalkID.ToString());
+            var channel = rest.Channels.Get("pollChannel" + voteUser.PollOption.Poll.TalkID.ToString());
             await channel.PublishAsync("voteUser", JsonSerializer.Serialize(voteUser));
             return Ok(voteUser);
         }
@@ -39,10 +39,13 @@ namespace AngularProjectAPI.Controllers
 
         public async Task<ActionResult<VoteUser>> PostVoteUser(VoteUser voteUser)
         {
-            _context.VoteUsers.Add(voteUser);
+            _context.VoteUsers.Add(new VoteUser()
+            {
+                UserID = voteUser.UserID,
+                PollOptionID = voteUser.PollOptionID
+            });
             await _context.SaveChangesAsync();
 
-            voteUser.PollOption = _context.PollOptions.Where(x => x.PollOptionID == voteUser.PollOptionID).FirstOrDefault();
             voteUser.PollOption.Poll = _context.Polls.Where(x => x.PollID == voteUser.PollOption.PollID).FirstOrDefault();
 
             var result = await PublishVoteUser(voteUser);

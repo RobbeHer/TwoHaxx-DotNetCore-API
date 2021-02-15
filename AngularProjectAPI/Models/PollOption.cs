@@ -9,6 +9,8 @@ namespace AngularProjectAPI.Models
     {
         public int PollOptionID { get; set; }
         public string Content { get; set; }
+        public int Votes { get; set; }
+        public ICollection<User> VotedBy { get; set; }
 
         // Relation
         public int PollID { get; set; }
