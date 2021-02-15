@@ -1,5 +1,17 @@
 {
   "dependencies": {
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2021-02-15T08:23:33.2317292Z"
+    },
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2021-02-15T08:20:29.0391451Z"
+    },
+    "appInsights1": {
+      "restored": true,
+      "restoreTime": "2021-02-15T08:19:07.4109646Z"
+    },
     "apis1": {
       "restored": true,
       "restoreTime": "2021-02-02T13:31:17.7316062Z"
@@ -11,8 +23,38 @@
       "Type": "resourceGroup",
       "Value": "twohaxx"
     },
+    "appInsights1.subscriptionId": {
+      "Name": "appInsights1.subscriptionId",
+      "Type": "subscription",
+      "Value": "562d9a34-ee36-4057-9fc1-0d807ed65bda"
+    },
+    "appInsights1.resourceGroupName": {
+      "Name": "appInsights1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "twohaxx"
+    },
+    "secrets1.resourceGroupName": {
+      "Name": "secrets1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "twohaxx"
+    },
+    "mssql1.subscriptionId": {
+      "Name": "mssql1.subscriptionId",
+      "Type": "subscription",
+      "Value": "562d9a34-ee36-4057-9fc1-0d807ed65bda"
+    },
     "apis1.subscriptionId": {
       "Name": "apis1.subscriptionId",
+      "Type": "subscription",
+      "Value": "562d9a34-ee36-4057-9fc1-0d807ed65bda"
+    },
+    "mssql1.resourceGroupName": {
+      "Name": "mssql1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "twohaxx"
+    },
+    "secrets1.subscriptionId": {
+      "Name": "secrets1.subscriptionId",
       "Type": "subscription",
       "Value": "562d9a34-ee36-4057-9fc1-0d807ed65bda"
     }
