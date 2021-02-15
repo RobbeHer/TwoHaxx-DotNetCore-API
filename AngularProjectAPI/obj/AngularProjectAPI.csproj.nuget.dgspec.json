@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Neotime\\source\\repos\\RobbeHer\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj": {}
+    "C:\\Users\\radar\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Neotime\\source\\repos\\RobbeHer\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj": {
+    "C:\\Users\\radar\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Neotime\\source\\repos\\RobbeHer\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
+        "projectUniqueName": "C:\\Users\\radar\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
         "projectName": "AngularProjectAPI",
-        "projectPath": "C:\\Users\\Neotime\\source\\repos\\RobbeHer\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
-        "packagesPath": "C:\\Users\\Neotime\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Neotime\\source\\repos\\RobbeHer\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\obj\\",
+        "projectPath": "C:\\Users\\radar\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
+        "packagesPath": "C:\\Users\\radar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\radar\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Neotime\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\radar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,14 +40,6 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Azure.Extensions.AspNetCore.Configuration.Secrets": {
-              "target": "Package",
-              "version": "[1.0.0, )"
-            },
-            "Azure.Identity": {
-              "target": "Package",
-              "version": "[1.2.2, )"
-            },
             "Dapper.Extensions.NetCore": {
               "target": "Package",
               "version": "[3.2.0, )"
