@@ -69,6 +69,7 @@ namespace AngularProjectAPI.Controllers
             foreach (var message in messages)
             {
                 message.User = _context.Users.Where(x => x.UserID == message.UserID).FirstOrDefault();
+                message.Likes = _context.UserLikeMessage.Where(x => x.MessageID == message.MessageID).Count();
             }
 
             return messages;

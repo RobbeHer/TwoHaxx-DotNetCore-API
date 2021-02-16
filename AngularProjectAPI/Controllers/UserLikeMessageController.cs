@@ -26,7 +26,7 @@ namespace AngularProjectAPI.Controllers
         {
             var channel = rest.Channels.Get("talkChannel" + userLikeMessage.Message.TalkID.ToString());
             await channel.PublishAsync("likeOnChatMessage", JsonSerializer.Serialize(userLikeMessage));
-            return Ok(userLikeMessage);
+            return userLikeMessage;
         }
 
         public async Task<ActionResult<UserLikeMessage>> DeleteUserLikeMessage(UserLikeMessage userLikeMessage)
@@ -34,17 +34,20 @@ namespace AngularProjectAPI.Controllers
             _context.UserLikeMessage.Remove(userLikeMessage);
             await _context.SaveChangesAsync();
 
-            return Ok(userLikeMessage);
+            return userLikeMessage;
         }
 
         public async Task<ActionResult<UserLikeMessage>> PostUserLikeMessage(UserLikeMessage userLikeMessage)
         {
-            _context.UserLikeMessage.Add(userLikeMessage);
+            _context.UserLikeMessage.Add(new UserLikeMessage() { 
+                MessageID = userLikeMessage.MessageID,
+                UserID = userLikeMessage.UserID
+            });
             await _context.SaveChangesAsync();
 
             var result = await PublishLikeOnMessage(userLikeMessage);
 
-            return Ok(result);
+            return result;
         }
     }
 }

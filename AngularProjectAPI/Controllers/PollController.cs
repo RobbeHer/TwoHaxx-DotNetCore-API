@@ -59,6 +59,11 @@ namespace AngularProjectAPI.Controllers
             foreach (var poll in polls)
             {
                 poll.PollOptions = _context.PollOptions.Where(x => x.PollID == poll.PollID).ToArray();
+
+                foreach (var pollOption in poll.PollOptions)
+                {
+                    pollOption.Votes = _context.VoteUsers.Where(x => x.PollOptionID == pollOption.PollOptionID).Count();
+                }
             }
             return polls;
         }
