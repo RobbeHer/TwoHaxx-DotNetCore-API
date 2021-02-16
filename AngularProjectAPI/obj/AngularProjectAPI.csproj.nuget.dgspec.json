@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\robbe\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj": {}
+    "C:\\Users\\Neotime\\source\\repos\\RobbeHer\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\robbe\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj": {
+    "C:\\Users\\Neotime\\source\\repos\\RobbeHer\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\robbe\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Neotime\\source\\repos\\RobbeHer\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
         "projectName": "AngularProjectAPI",
-        "projectPath": "C:\\Users\\robbe\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
-        "packagesPath": "C:\\Users\\robbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\robbe\\Documents\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\obj\\",
+        "projectPath": "C:\\Users\\Neotime\\source\\repos\\RobbeHer\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\AngularProjectAPI.csproj",
+        "packagesPath": "C:\\Users\\Neotime\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Neotime\\source\\repos\\RobbeHer\\TwoHaxx-DotNetCore-API\\AngularProjectAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\robbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Neotime\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
