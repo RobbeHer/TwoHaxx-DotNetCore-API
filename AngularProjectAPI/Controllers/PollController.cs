@@ -51,6 +51,18 @@ namespace AngularProjectAPI.Controllers
             return polls;
         }
 
+        // GET: api/Poll/available/
+        [HttpGet("available")]
+        public async Task<ActionResult<IEnumerable<Poll>>> GetAvailablePolls()
+        {
+            var polls = await _context.Polls.Where(x => x.IsAvailable== true).ToListAsync();
+            foreach (var poll in polls)
+            {
+                poll.PollOptions = _context.PollOptions.Where(x => x.PollID == poll.PollID).ToArray();
+            }
+            return polls;
+        }
+
         // GET: api/Poll/polls-of-room/5
         [HttpGet("polls-of-room/{id}")]
         public async Task<ActionResult<IEnumerable<Poll>>> GetPollsOfRoom(int id)
@@ -106,7 +118,7 @@ namespace AngularProjectAPI.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(poll);
         }
 
         private bool PollExists(int id)
@@ -135,6 +147,8 @@ namespace AngularProjectAPI.Controllers
         [HttpPost("make-available")]
         public async Task<ActionResult<Poll>> PostnewAvailablePoll(Poll poll)
         {
+            poll.IsAvailable = true;
+            await PutPoll(poll.PollID, poll);
             var result = await PublishNewAvailablePoll(poll);
 
             return Ok(result);
@@ -143,6 +157,8 @@ namespace AngularProjectAPI.Controllers
         [HttpPost("hide")]
         public async Task<ActionResult<Poll>> PostPollToHide(Poll poll)
         {
+            poll.IsAvailable = false;
+            await PutPoll(poll.PollID, poll);
             var result = await PublishPollToHide(poll);
 
             return Ok(result);

@@ -63,8 +63,8 @@ namespace AngularProjectAPI.Models
             context.SaveChanges();
 
             context.Polls.AddRange(
-                    new Poll { Name = "Poll 1", Question = "My question", TalkID = 1 },
-                    new Poll { Name = "Poll 2", Question = "My second question", TalkID = 1 }
+                    new Poll { Name = "Poll 1", Question = "My question", TalkID = 1, IsAvailable = true },
+                    new Poll { Name = "Poll 2", Question = "My second question", TalkID = 1, IsAvailable = true }
                 );
             context.SaveChanges();
 
