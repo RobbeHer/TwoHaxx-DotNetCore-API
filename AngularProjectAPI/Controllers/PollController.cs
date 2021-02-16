@@ -51,11 +51,11 @@ namespace AngularProjectAPI.Controllers
             return polls;
         }
 
-        // GET: api/Poll/available/
-        [HttpGet("available")]
-        public async Task<ActionResult<IEnumerable<Poll>>> GetAvailablePolls()
+        // GET: api/Poll/available-of-room/
+        [HttpGet("available-of-room/{id}")]
+        public async Task<ActionResult<IEnumerable<Poll>>> GetAvailablePollsOfRoom(int id)
         {
-            var polls = await _context.Polls.Where(x => x.IsAvailable== true).ToListAsync();
+            var polls = await _context.Polls.Where(x => x.TalkID == id && x.IsAvailable== true).ToListAsync();
             foreach (var poll in polls)
             {
                 poll.PollOptions = _context.PollOptions.Where(x => x.PollID == poll.PollID).ToArray();
