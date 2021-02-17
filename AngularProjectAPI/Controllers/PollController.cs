@@ -47,6 +47,17 @@ namespace AngularProjectAPI.Controllers
             foreach (var poll in polls)
             {
                 poll.PollOptions = _context.PollOptions.Where(x => x.PollID == poll.PollID).ToArray();
+
+                foreach (var pollOption in poll.PollOptions)
+                {
+                    var voteUsers = _context.VoteUsers.Where(x => x.PollOptionID == pollOption.PollOptionID).ToArray();
+                    pollOption.Votes = voteUsers.Count();
+
+                    foreach (var voteUser in voteUsers)
+                    {
+                        pollOption.VotedBy.Add(_context.Users.Where(x => x.UserID == voteUser.UserID).FirstOrDefault());
+                    }
+                }
             }
             return polls;
         }
@@ -62,7 +73,14 @@ namespace AngularProjectAPI.Controllers
 
                 foreach (var pollOption in poll.PollOptions)
                 {
-                    pollOption.Votes = _context.VoteUsers.Where(x => x.PollOptionID == pollOption.PollOptionID).Count();
+                    var voteUsers = _context.VoteUsers.Where(x => x.PollOptionID == pollOption.PollOptionID).ToArray();
+                    pollOption.Votes = voteUsers.Count();
+                    pollOption.VotedBy = new List<User>();
+
+                    foreach (var voteUser in voteUsers)
+                    {
+                        pollOption.VotedBy.Add(_context.Users.Where(x => x.UserID == voteUser.UserID).FirstOrDefault());
+                    }
                 }
             }
             return polls;
@@ -76,6 +94,17 @@ namespace AngularProjectAPI.Controllers
             foreach (var poll in polls)
             {
                 poll.PollOptions = _context.PollOptions.Where(x => x.PollID == poll.PollID).ToArray();
+
+                foreach (var pollOption in poll.PollOptions)
+                {
+                    var voteUsers = _context.VoteUsers.Where(x => x.PollOptionID == pollOption.PollOptionID).ToArray();
+                    pollOption.Votes = voteUsers.Count();
+
+                    foreach (var voteUser in voteUsers)
+                    {
+                        pollOption.VotedBy.Add(_context.Users.Where(x => x.UserID == voteUser.UserID).FirstOrDefault());
+                    }
+                }
             }
             return polls;
         }
@@ -93,6 +122,16 @@ namespace AngularProjectAPI.Controllers
 
             poll.PollOptions = _context.PollOptions.Where(x => x.PollID == poll.PollID).ToArray();
 
+            foreach (var pollOption in poll.PollOptions)
+            {
+                var voteUsers = _context.VoteUsers.Where(x => x.PollOptionID == pollOption.PollOptionID).ToArray();
+                pollOption.Votes = voteUsers.Count();
+
+                foreach (var voteUser in voteUsers)
+                {
+                    pollOption.VotedBy.Add(_context.Users.Where(x => x.UserID == voteUser.UserID).FirstOrDefault());
+                }
+            }
             return poll;
         }
 

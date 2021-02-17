@@ -69,7 +69,15 @@ namespace AngularProjectAPI.Controllers
             foreach (var message in messages)
             {
                 message.User = _context.Users.Where(x => x.UserID == message.UserID).FirstOrDefault();
-                message.Likes = _context.UserLikeMessage.Where(x => x.MessageID == message.MessageID).Count();
+
+                var userLikesMessages = _context.UserLikeMessage.Where(x => x.MessageID == message.MessageID).ToArray();
+                message.Likes = userLikesMessages.Count();
+                message.LikedBy = new List<User>();
+
+                foreach (var userLikesMessage in userLikesMessages)
+                {
+                    message.LikedBy.Add(_context.Users.Where(x => x.UserID == userLikesMessage.UserID).FirstOrDefault());
+                }
             }
 
             return messages;
@@ -87,6 +95,15 @@ namespace AngularProjectAPI.Controllers
             }
 
             message.User = _context.Users.Where(x => x.UserID == message.UserID).FirstOrDefault();
+
+            var userLikesMessages = _context.UserLikeMessage.Where(x => x.MessageID == message.MessageID).ToArray();
+            message.Likes = userLikesMessages.Count();
+            message.LikedBy = new List<User>();
+
+            foreach (var userLikesMessage in userLikesMessages)
+            {
+                message.LikedBy.Add(_context.Users.Where(x => x.UserID == userLikesMessage.UserID).FirstOrDefault());
+            }
 
             return message;
         }
