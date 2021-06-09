@@ -1,5 +1,4 @@
-﻿using AngularProjectAPI.Data;
-using AngularProjectAPI.Helpers;
+﻿using AngularProjectAPI.Helpers;
 using AngularProjectAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -43,9 +42,11 @@ namespace AngularProjectAPI.Services
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim("UserID", user.UserID.ToString()),
+                    new Claim("FirstName", user.FirstName),
+                    new Claim("LastName", user.LastName),
                     new Claim("Email", user.Email)
                 }),
-                Expires = DateTime.UtcNow.AddDays(7),
+                Expires = DateTime.UtcNow.AddDays(user.IsGuest ? 1 : 7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);

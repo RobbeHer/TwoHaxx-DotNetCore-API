@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\radar\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\radar\\.nuget\\packages"
+    ]
+  }
+}

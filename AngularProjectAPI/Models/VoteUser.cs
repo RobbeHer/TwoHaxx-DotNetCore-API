@@ -10,7 +10,7 @@ namespace AngularProjectAPI.Models
         public int VoteUserID { get; set; }
 
         // Relations
-        public int UserID { get; set; }
+        public int? UserID { get; set; }
         public User User { get; set; }
         public int PollOptionID { get; set; }
         public PollOption PollOption { get; set; }

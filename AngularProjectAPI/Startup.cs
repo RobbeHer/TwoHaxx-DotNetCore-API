@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AngularProjectAPI.Data;
 using AngularProjectAPI.Helpers;
 using AngularProjectAPI.Models;
 using AngularProjectAPI.Services;
@@ -41,7 +40,7 @@ namespace AngularProjectAPI
                        .AllowAnyHeader();
             }));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(swagger =>
@@ -104,6 +103,7 @@ namespace AngularProjectAPI
             services.AddDbContext<TwoHaxxContext>(opt =>
                 opt.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddApplicationInsightsTelemetry(Configuration["APPINSIGHTS_CONNECTIONSTRING"]);
 
         }
 
